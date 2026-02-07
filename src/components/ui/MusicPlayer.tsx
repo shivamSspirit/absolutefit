@@ -52,12 +52,10 @@ export default function MusicPlayer() {
     }
   };
 
-  if (!mounted) return null;
-
   return (
     <button
       onClick={toggleMusic}
-      disabled={!isLoaded}
+      disabled={!mounted || !isLoaded}
       aria-label={isPlaying ? "Mute music" : "Play music"}
       className={`
         fixed z-[100]
@@ -68,7 +66,7 @@ export default function MusicPlayer() {
         rounded-full
         flex items-center justify-center
         transition-all duration-300 ease-out
-        ${isLoaded ? "cursor-pointer" : "cursor-wait opacity-60"}
+        ${!mounted || !isLoaded ? "cursor-wait opacity-60" : "cursor-pointer"}
         ${isPlaying
           ? "bg-gradient-to-br from-[#1a1a1a] to-[#0d0d0d] shadow-[0_0_25px_rgba(202,255,51,0.5),0_0_50px_rgba(202,255,51,0.2)]"
           : "bg-gradient-to-br from-[#1a1a1a] to-[#0d0d0d] shadow-[0_0_20px_rgba(255,45,45,0.4),0_0_40px_rgba(255,45,45,0.15)]"
