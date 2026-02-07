@@ -36,7 +36,7 @@ export default function ContactPage() {
   return (
     <>
       {/* Info Block */}
-      <section className="pt-24 pb-12 sm:pt-32 sm:pb-16 md:pt-40 md:pb-20 bg-navy-dark">
+      <section className="pt-20 pb-12 sm:pt-24 sm:pb-16 md:pt-28 md:pb-20 bg-navy-dark">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -44,10 +44,10 @@ export default function ContactPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-8 sm:mb-12"
           >
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6">
               Contact Us
             </h1>
-            <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto px-2">
+            <p className="text-sm sm:text-base md:text-lg text-gray-300 max-w-2xl mx-auto">
               Ready to start your fitness journey? Have questions about our programs?
               We&apos;d love to hear from you. Reach out through any of the channels below.
             </p>
@@ -58,7 +58,7 @@ export default function ContactPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-6"
+            className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6"
           >
             {contactInfo.map((item) => (
               <Link
@@ -66,11 +66,11 @@ export default function ContactPage() {
                 href={item.href}
                 target={item.external ? '_blank' : undefined}
                 rel={item.external ? 'noopener noreferrer' : undefined}
-                className="bg-navy-secondary p-6 rounded-lg hover:bg-navy-accent transition-colors duration-300 group"
+                className="bg-navy-secondary p-4 sm:p-6 rounded-lg hover:bg-navy-accent transition-colors duration-300 group"
               >
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-full bg-accent-red/20 flex items-center justify-center flex-shrink-0 group-hover:bg-accent-red/30 transition-colors">
-                    <item.icon className="w-5 h-5 text-accent-red" />
+                <div className="flex items-start gap-3 sm:gap-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-accent-red/20 flex items-center justify-center flex-shrink-0 group-hover:bg-accent-red/30 transition-colors">
+                    <item.icon className="w-4 h-4 sm:w-5 sm:h-5 text-accent-red" />
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center gap-2">

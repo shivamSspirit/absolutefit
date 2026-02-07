@@ -95,7 +95,7 @@ export default function HomePage() {
 
       {/* About Preview Section */}
       <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-off-white">
-        <div className="max-w-4xl mx-auto px-5 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -133,7 +133,7 @@ export default function HomePage() {
 
       {/* Contact Form Section */}
       <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-white">
-        <div className="max-w-xl mx-auto px-5 sm:px-6 lg:px-8">
+        <div className="max-w-xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading title="Contact Us" align="center" />
           <p className="text-gray-600 text-sm sm:text-base md:text-lg text-center mb-8 sm:mb-10">
             Have questions? We&apos;d love to hear from you. Send us a message and we&apos;ll

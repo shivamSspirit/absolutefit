@@ -28,7 +28,7 @@ export default function AlternatingSection({
 
   return (
     <section className={`py-12 sm:py-16 md:py-20 lg:py-24 ${bgClass} ${className}`}>
-      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
           className={`grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 items-center ${
             imageOnRight ? '' : 'lg:flex-row-reverse'

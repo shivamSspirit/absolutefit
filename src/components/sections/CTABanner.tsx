@@ -28,7 +28,7 @@ export default function CTABanner({ text, className = '' }: CTABannerProps) {
         <div className="absolute bottom-0 right-0 w-40 sm:w-56 md:w-72 h-40 sm:h-56 md:h-72 bg-accent-blue rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
       </div>
 
-      <div className="relative max-w-4xl mx-auto px-5 sm:px-6 lg:px-8 text-center">
+      <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.p
           style={{ y }}
           className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-semibold text-white italic leading-relaxed"

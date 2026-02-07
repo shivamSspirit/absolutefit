@@ -8,9 +8,9 @@ import { ArrowDown, Play } from 'lucide-react';
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center bg-navy-dark overflow-hidden">
+    <section className="relative min-h-[80vh] sm:min-h-[85vh] md:min-h-screen flex flex-col items-center justify-center bg-navy-dark pt-20 sm:pt-24">
       {/* Background Image with Overlay */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 overflow-hidden">
         <Image
           src={images.heroGym}
           alt="Gym atmosphere"
@@ -22,7 +22,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-b from-navy-dark via-navy-dark/50 to-navy-dark" />
         <div className="absolute inset-0 bg-gradient-to-r from-navy-dark/90 via-transparent to-navy-dark/90" />
         {/* Red accent glow */}
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] sm:w-[800px] h-[300px] sm:h-[400px] bg-accent-red/15 blur-[120px] sm:blur-[150px] rounded-full" />
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[80vw] max-w-[600px] sm:max-w-[800px] h-[200px] sm:h-[300px] md:h-[400px] bg-accent-red/15 blur-[80px] sm:blur-[120px] md:blur-[150px] rounded-full" />
       </div>
 
       {/* Decorative Lines - Desktop only */}
@@ -44,7 +44,7 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-6xl mx-auto px-5 sm:px-6 lg:px-8 text-center pt-16 sm:pt-20">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Main Logo Text */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
@@ -52,11 +52,11 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="mb-3 sm:mb-4"
         >
-          <h1 className="text-[3rem] xs:text-[3.5rem] sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold text-white leading-[0.9] tracking-tight drop-shadow-lg">
+          <h1 className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold text-white leading-[0.9] tracking-tight drop-shadow-lg">
             ABSOLUTE
           </h1>
           <div className="relative inline-block">
-            <h1 className="text-[3rem] xs:text-[3.5rem] sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold text-accent-red leading-[0.9] tracking-tight drop-shadow-lg">
+            <h1 className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold text-accent-red leading-[0.9] tracking-tight drop-shadow-lg">
               FITNESS
             </h1>
             {/* Animated underline */}
@@ -74,7 +74,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="text-gray-300 text-[0.65rem] xs:text-xs sm:text-sm md:text-base tracking-[0.15em] sm:tracking-[0.2em] uppercase mb-6 sm:mb-8 md:mb-10 font-medium"
+          className="text-gray-300 text-xs sm:text-sm md:text-base tracking-[0.15em] sm:tracking-[0.2em] uppercase mb-6 sm:mb-8 md:mb-10 font-medium"
         >
           The Complete Health & Fitness Centre
         </motion.p>
@@ -84,9 +84,9 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="max-w-2xl mx-auto mb-8 sm:mb-10 md:mb-12 px-4"
+          className="max-w-2xl mx-auto mb-8 sm:mb-10 md:mb-12 px-2"
         >
-          <p className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl text-white/95 font-light italic leading-relaxed">
+          <p className="text-sm sm:text-lg md:text-xl lg:text-2xl text-white/95 font-light italic leading-relaxed">
             &ldquo;Your Body Can Stand Almost Anything.{' '}
             <span className="text-accent-red font-semibold not-italic">It&apos;s Your Mind</span>{' '}
             You Have To Convince.&rdquo;
@@ -98,7 +98,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.7 }}
-          className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4"
+          className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-2"
         >
           <Link
             href="/programs"

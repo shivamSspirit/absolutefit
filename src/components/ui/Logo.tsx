@@ -10,19 +10,19 @@ interface LogoProps {
 export default function Logo({ size = 'md', className = '' }: LogoProps) {
   const sizes = {
     sm: {
-      text: 'text-sm sm:text-base md:text-lg',
-      icon: 'w-6 h-6 sm:w-7 sm:h-7',
-      iconText: 'text-[9px] sm:text-[10px]'
+      text: 'text-base sm:text-base md:text-lg',
+      icon: 'w-8 h-8 sm:w-8 sm:h-8',
+      iconText: 'text-[11px] sm:text-[11px]'
     },
     md: {
-      text: 'text-base sm:text-lg md:text-xl',
-      icon: 'w-7 h-7 sm:w-8 sm:h-8',
-      iconText: 'text-[10px] sm:text-xs'
+      text: 'text-lg sm:text-lg md:text-xl',
+      icon: 'w-9 h-9 sm:w-9 sm:h-9',
+      iconText: 'text-xs sm:text-xs'
     },
     lg: {
       text: 'text-xl sm:text-2xl md:text-3xl',
-      icon: 'w-8 h-8 sm:w-9 sm:h-9',
-      iconText: 'text-xs sm:text-sm'
+      icon: 'w-10 h-10 sm:w-10 sm:h-10',
+      iconText: 'text-sm sm:text-sm'
     },
   };
 
