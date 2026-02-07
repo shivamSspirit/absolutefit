@@ -1,18 +1,20 @@
 import type { Metadata } from "next";
-import { Bebas_Neue, DM_Sans } from "next/font/google";
+import { Oswald, Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import MusicPlayer from "@/components/ui/MusicPlayer";
 
-const bebasNeue = Bebas_Neue({
-  weight: "400",
-  variable: "--font-bebas-neue",
+const oswald = Oswald({
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-oswald",
   subsets: ["latin"],
   display: "swap",
 });
 
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
+const inter = Inter({
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-inter",
   subsets: ["latin"],
   display: "swap",
 });
@@ -36,13 +38,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${bebasNeue.variable} ${dmSans.variable}`}>
+    <html lang="en" className={`${oswald.variable} ${inter.variable}`}>
       <body className="antialiased">
-        {/* Noise texture overlay for atmosphere */}
         <div className="noise-overlay" aria-hidden="true" />
         <Header />
         <main>{children}</main>
         <Footer />
+        <MusicPlayer />
       </body>
     </html>
   );

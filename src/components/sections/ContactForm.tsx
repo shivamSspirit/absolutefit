@@ -49,15 +49,15 @@ export default function ContactForm({ darkBackground = false, className = '' }: 
     setTimeout(() => setStatus('idle'), 3000);
   };
 
-  const inputClasses = `w-full px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base rounded-md border transition-all duration-300
+  const inputClasses = `w-full px-4 py-3 sm:py-3.5 text-sm sm:text-base rounded-md border transition-all duration-300 font-normal
     ${darkBackground
       ? 'bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-accent-blue focus:bg-white/15'
-      : 'bg-white border-gray-300 text-body-text placeholder:text-gray-400 focus:border-accent-blue focus:ring-2 focus:ring-accent-blue/20'
+      : 'bg-white border-gray-300 text-gray-900 placeholder:text-gray-400 focus:border-accent-blue focus:ring-2 focus:ring-accent-blue/20'
     }
     focus:outline-none`;
 
-  const labelClasses = `block text-xs sm:text-sm font-medium mb-1.5 sm:mb-2 ${darkBackground ? 'text-gray-200' : 'text-body-text'}`;
-  const errorClasses = 'text-accent-red text-[10px] sm:text-xs mt-1';
+  const labelClasses = `block text-sm sm:text-base font-medium mb-2 ${darkBackground ? 'text-gray-200' : 'text-gray-800'}`;
+  const errorClasses = 'text-accent-red text-xs sm:text-sm mt-1.5 font-medium';
 
   return (
     <motion.div
@@ -67,8 +67,8 @@ export default function ContactForm({ darkBackground = false, className = '' }: 
       transition={{ duration: 0.6 }}
       className={className}
     >
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 sm:space-y-6">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-5 sm:space-y-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
           {/* First Name */}
           <div>
             <label htmlFor="firstName" className={labelClasses}>

@@ -1,39 +1,97 @@
 @import "tailwindcss";
 
 @theme inline {
-  /* Custom Colors - More dramatic palette */
+  /* Custom Colors - High contrast palette */
   --color-navy-dark: #0A0E13;
   --color-navy-secondary: #0D1520;
   --color-navy-accent: #1A2A40;
-  --color-light-bg: #F0F2F5;
+  --color-light-bg: #F5F5F7;
   --color-off-white: #FAFAFA;
-  --color-accent-red: #FF2D2D;
-  --color-accent-red-dark: #CC0000;
+  --color-accent-red: #FF3B3B;
+  --color-accent-red-dark: #E02020;
   --color-accent-blue: #00A3FF;
   --color-button-grey: #3D4550;
-  --color-body-text: #1A1B1E;
+  --color-body-text: #1A1A1A;
+  --color-body-light: #E8E8E8;
 
   /* Fonts */
-  --font-heading: var(--font-bebas-neue);
-  --font-body: var(--font-dm-sans);
+  --font-heading: var(--font-oswald);
+  --font-body: var(--font-inter);
 }
 
 html {
   scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+/* Responsive base font size */
+@media (max-width: 640px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 1280px) {
+  html {
+    font-size: 18px;
+  }
 }
 
 body {
-  font-family: var(--font-body), system-ui, sans-serif;
+  font-family: var(--font-body), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   background: #ffffff;
   color: var(--color-body-text);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  font-weight: 400;
 }
 
+/* Headings - Oswald font with better weight */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading), system-ui, sans-serif;
   text-transform: uppercase;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.03em;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+/* Responsive heading sizes */
+h1 {
+  font-size: clamp(2.5rem, 8vw, 6rem);
+  font-weight: 700;
+}
+
+h2 {
+  font-size: clamp(1.75rem, 5vw, 3rem);
+  font-weight: 600;
+}
+
+h3 {
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-weight: 600;
+}
+
+h4 {
+  font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+  font-weight: 500;
+}
+
+/* Paragraph text */
+p {
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+/* Strong/Bold text - better weight */
+strong, b {
+  font-weight: 600;
+}
+
+/* Links */
+a {
+  font-weight: 500;
 }
 
 /* Noise texture overlay */
@@ -45,23 +103,42 @@ h1, h2, h3, h4, h5, h6 {
   height: 100%;
   pointer-events: none;
   z-index: 9999;
-  opacity: 0.03;
+  opacity: 0.02;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* Text utilities for dark backgrounds */
+.text-on-dark {
+  color: #F0F0F0;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.text-on-dark-muted {
+  color: #B0B0B0;
+}
+
+/* Text utilities for light backgrounds */
+.text-on-light {
+  color: #1A1A1A;
+}
+
+.text-on-light-muted {
+  color: #555555;
 }
 
 /* Dramatic text shadow for headings */
 .text-shadow-brutal {
-  text-shadow: 4px 4px 0 rgba(255, 45, 45, 0.3);
+  text-shadow: 3px 3px 0 rgba(255, 59, 59, 0.25);
 }
 
 /* Glowing accent effect */
 .glow-red {
-  box-shadow: 0 0 40px rgba(255, 45, 45, 0.4);
+  box-shadow: 0 0 40px rgba(255, 59, 59, 0.4);
 }
 
 /* Gradient text */
 .text-gradient {
-  background: linear-gradient(135deg, #ffffff 0%, #FF2D2D 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #FF3B3B 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -74,14 +151,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .gradient-border {
-  background: linear-gradient(90deg, #FF2D2D, #FF6B35, #FF2D2D);
+  background: linear-gradient(90deg, #FF3B3B, #FF6B35, #FF3B3B);
   background-size: 200% auto;
   animation: gradient-shift 3s ease infinite;
 }
 
 /* Custom selection */
 ::selection {
-  background: #FF2D2D;
+  background: #FF3B3B;
   color: white;
 }
 
@@ -114,7 +191,7 @@ h1, h2, h3, h4, h5, h6 {
   bottom: -4px;
   left: 0;
   width: 100%;
-  height: 4px;
+  height: 3px;
   background: var(--color-accent-red);
   transform: scaleX(0);
   transform-origin: right;
@@ -132,7 +209,79 @@ h1, h2, h3, h4, h5, h6 {
     -45deg,
     transparent,
     transparent 10px,
-    rgba(255, 45, 45, 0.05) 10px,
-    rgba(255, 45, 45, 0.05) 20px
+    rgba(255, 59, 59, 0.05) 10px,
+    rgba(255, 59, 59, 0.05) 20px
   );
+}
+
+/* Music Player Sound Bar Animations */
+@keyframes soundbar1 {
+  0%, 100% { height: 6px; }
+  50% { height: 18px; }
+}
+
+@keyframes soundbar2 {
+  0%, 100% { height: 14px; }
+  50% { height: 6px; }
+}
+
+@keyframes soundbar3 {
+  0%, 100% { height: 10px; }
+  50% { height: 22px; }
+}
+
+@keyframes soundbar4 {
+  0%, 100% { height: 18px; }
+  50% { height: 8px; }
+}
+
+@keyframes soundbar5 {
+  0%, 100% { height: 12px; }
+  50% { height: 20px; }
+}
+
+.animate-soundbar1 {
+  animation: soundbar1 0.5s ease-in-out infinite;
+}
+
+.animate-soundbar2 {
+  animation: soundbar2 0.4s ease-in-out infinite;
+}
+
+.animate-soundbar3 {
+  animation: soundbar3 0.6s ease-in-out infinite;
+}
+
+.animate-soundbar4 {
+  animation: soundbar4 0.35s ease-in-out infinite;
+}
+
+.animate-soundbar5 {
+  animation: soundbar5 0.45s ease-in-out infinite;
+}
+
+/* Responsive text utilities */
+.text-responsive-sm {
+  font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+}
+
+.text-responsive-base {
+  font-size: clamp(0.875rem, 2vw, 1rem);
+}
+
+.text-responsive-lg {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+}
+
+.text-responsive-xl {
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+}
+
+/* Better contrast for gray text */
+.text-gray-muted {
+  color: #6B7280;
+}
+
+.text-gray-muted-dark {
+  color: #9CA3AF;
 }
