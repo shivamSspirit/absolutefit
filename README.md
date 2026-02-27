@@ -4,7 +4,7 @@ A modern, responsive website for **Absolute Fitness** - The Complete Health & Fi
 
 ## About
 
-Absolute Fitness is a premium gym offering personalized training programs including:
+Absolute Fitness is a premium gym offering personalized training programs, including:
 
 - **Cardio** - High-intensity cardio sessions
 - **Zumba Dance** - Fun dance-based fitness classes
@@ -35,14 +35,6 @@ npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000)
-
-## Location
-
-60/3, Sheopur Rd, Sanganer, Pratap Nagar, Jaipur, Rajasthan 302029
-
-## Connect
-
-Instagram: [@absolutefit_jaipur](https://instagram.com/absolutefit_jaipur)
 
 ---
 
